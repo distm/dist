@@ -1,0 +1,64 @@
+// Smartphones (portrait and landscape)
+@mixin phone-pl {
+    @media (min-device-width : 320px) and (max-device-width : 480px) {
+        @content;
+    }
+}
+
+// Smartphones (landscape)
+@mixin phone-l {
+    @media (min-width : 321px) {
+        @content;
+    }
+}
+
+// Smartphones (portrait)
+@mixin phone-p {
+    @media (max-width : 320px) {
+        @content;
+    }
+}
+
+// Tablets (portrait and landscape)
+@mixin tablet-pl {
+    @media (min-device-width : 768px) and (max-device-width : 1024px) {
+        @content;
+    }
+}
+
+// Tablets (landscape)
+@mixin tablet-l {
+    @media (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        @content;
+    }
+}
+
+// Tablets (portrait)
+@mixin tablet-p {
+    @media (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        @content;
+    }
+}
+
+// Desktops and laptops
+@mixin desktop {
+    @media (min-width : 1025px) {
+        @content;
+    }
+}
+
+// Large screens
+@mixin large {
+    @media (min-width : 1824px) {
+        @content;
+    }
+}
+
+// iPhone 4
+@mixin iphone {
+    @media
+    (-webkit-min-device-pixel-ratio : 1.5),
+        (min-device-pixel-ratio : 1.5) {
+        @content;
+    }
+}

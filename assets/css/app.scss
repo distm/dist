@@ -1,0 +1,88 @@
+@import "mixin.scss";
+
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;    
+}
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 400;
+    @extend html;
+    
+    &:after {
+        display: block;
+        content: "normal";
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        background-color: #00F;
+        color: #FFF;
+        font-size: 12px;
+        line-height: 1;
+        padding: 3px 5px;
+        
+        @include large      { content: "large"; }
+        @include desktop    { content: "desktop"; }
+        @include tablet     { content: "tablet"; }
+        @include phone      { content: "phone"; }
+    }
+}
+
+/* app-nav */
+.app-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #292929;
+    
+    .app-nav-wrapper {
+        //border: 1px solid #F00;
+        
+        .brand {
+            display: block;
+            padding: 10px 20px;
+            background-color: #24bae6;
+            color: #FFF;
+            font-size: 18px;
+            
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+        
+        ul {
+            //border: 1px solid #00F;
+            margin: 0;
+            padding: 0;
+            
+            li {
+                //border: 1px dotted;
+                list-style-type: none;
+                padding: 0;
+                margin: 3px 0;
+                
+                a {
+                    display: block;
+                    line-height: 1;
+                    padding: 10px 30px 10px 20px;
+                    color: #FFF;
+                    
+                    &:hover, &:focus {
+                        text-decoration: none;
+                        background-color: #000;
+                    }
+                }
+            }
+            
+            .dropdown-submenu > a:after {
+                margin-top: 3px;
+                margin-right: -15px;
+            }
+        }
+    }
+}
+/* end of app-nav */

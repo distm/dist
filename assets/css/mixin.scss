@@ -1,0 +1,27 @@
+// Phones
+@mixin phone {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+// Tablets
+@mixin tablet {
+    @media (min-width: 768px) and (max-width : 992px) {
+        @content;
+    }
+}
+
+// Desktops and laptops
+@mixin desktop {
+    @media (min-width: 993px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+// Large screens
+@mixin large {
+    @media (min-width : 1200px) {
+        @content;
+    }
+}
